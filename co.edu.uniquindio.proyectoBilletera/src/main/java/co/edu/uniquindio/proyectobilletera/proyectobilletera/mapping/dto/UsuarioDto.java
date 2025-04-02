@@ -1,4 +1,11 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.mapping.dto;
 
-public class UsuarioDto {
+public record UsuarioDto(
+        String nombre,
+        String apellido,
+        String idUsuario,
+        String correo
+
+){
+
 }

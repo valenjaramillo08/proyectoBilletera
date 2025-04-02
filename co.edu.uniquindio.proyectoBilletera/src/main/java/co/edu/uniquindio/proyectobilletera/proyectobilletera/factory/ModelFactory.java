@@ -1,4 +1,8 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.factory;
 
-public class ModelFactory {
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.service.IModelFactoryServices;
+
+public class ModelFactory implements IModelFactoryServices {
+    private static ModelFactory modelFactory;
+
 }
