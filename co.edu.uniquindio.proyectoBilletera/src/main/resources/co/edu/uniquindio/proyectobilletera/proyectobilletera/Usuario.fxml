@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="460.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectobilletera.proyectobilletera.Usuario">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="447.0" prefWidth="642.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="31.0" layoutY="29.0" text="Nombre:" />
+                  <Label layoutX="31.0" layoutY="77.0" text="Apellido:" />
+                  <Label layoutX="317.0" layoutY="29.0" text="Identificación:" />
+                  <Label layoutX="320.0" layoutY="77.0" text="Correo:" />
+                  <TextField layoutX="84.0" layoutY="73.0" prefHeight="5.0" prefWidth="166.0" />
+                  <TextField layoutX="84.0" layoutY="29.0" prefHeight="25.0" prefWidth="166.0" />
+                  <TextField layoutX="407.0" layoutY="25.0" prefHeight="25.0" prefWidth="166.0" />
+                  <TextField layoutX="407.0" layoutY="73.0" prefHeight="25.0" prefWidth="166.0" />
+                  <Separator layoutY="127.0" prefHeight="0.0" prefWidth="640.0" />
+                  <Button layoutX="93.0" layoutY="168.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Nuevo" />
+                  <Button layoutX="250.0" layoutY="168.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Agregar" />
+                  <Button layoutX="391.0" layoutY="168.0" mnemonicParsing="false" text="Actualizar" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
