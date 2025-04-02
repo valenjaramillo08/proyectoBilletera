@@ -1,7 +1,11 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Administrador extends Persona implements IUsuarioServices {
         public String idAdministrador;
+        List<Usuario> listaUsuarios = new ArrayList<>();
 
         public Administrador() {
         }
