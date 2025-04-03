@@ -13,6 +13,10 @@ public class Usuario extends Persona {
     public List<Cuenta> listaCuentas = new ArrayList<>();
     public List<Transaccion> listaTransacciones = new ArrayList<>();
     public List<Presupuesto> listaPresupuestos = new ArrayList<>();
+    public List<Categoria> listaCategorias = new ArrayList<>();
+    public Administrador administradorAsociado;
+    
+
 
 
 

@@ -1,10 +1,15 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Presupuesto {
     public String idPresupuesto;
     public String nombrePresupuesto;
     public double montoPresupuesto;
     public double montoPresupuestoGastado;
+    List<Categoria> listaCategorias = new ArrayList<>();
+    public Usuario usuarioAsociado;
 
     public Presupuesto() {}
     public Presupuesto(String idPresupuesto,

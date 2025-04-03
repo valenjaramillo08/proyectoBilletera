@@ -5,6 +5,8 @@ public class Cuenta {
     public String nombreBanco;
     public String numeroCuenta;
     public TipoCuenta tipoCuenta;
+    public Usuario usuarioAsociado;
+    public Administrador administradorAsociado;
 
     public Cuenta(){}
 
