@@ -6,6 +6,8 @@ import java.util.List;
 public class Administrador extends Persona implements IUsuarioServices {
         public String idAdministrador;
         List<Usuario> listaUsuarios = new ArrayList<>();
+        List<Transaccion> listaTransacciones = new ArrayList<>();
+        List<Cuenta> listaCuentas = new ArrayList<>();
 
         public Administrador() {
         }

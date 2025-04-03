@@ -1,6 +1,8 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Transaccion {
     public String idTransaccion;
@@ -9,6 +11,10 @@ public class Transaccion {
     public double monto;
     public String descripcion;
     public TipoCuenta tipoCuenta;
+    public Usuario usuarioAsociado;
+    public TipoTransaccion tipoTransaccion;
+    public Administrador administradorAsociado;
+    List<Categoria> listaCategorias = new ArrayList<>();
 
     public Transaccion() {}
     public Transaccion(
