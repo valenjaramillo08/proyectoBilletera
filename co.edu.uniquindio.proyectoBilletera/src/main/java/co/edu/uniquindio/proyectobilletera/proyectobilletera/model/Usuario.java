@@ -19,7 +19,9 @@ public class Usuario extends Persona {
 
 
 
+    public  Usuario() {
 
+    }
     public  Usuario(String nombre,
                     String apellido,
                     String correo,

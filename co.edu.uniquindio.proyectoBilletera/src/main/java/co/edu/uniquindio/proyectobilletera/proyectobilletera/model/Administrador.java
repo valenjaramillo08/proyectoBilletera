@@ -1,5 +1,7 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.service.IUsuarioServices;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +31,10 @@ public class Administrador extends Persona implements IUsuarioServices {
                 usuario.setNombre(nombre);
                 usuario.setApellido(apellido);
                 usuario.setCorreo(correo);
-                usuario.setTelefono(telefono);
-                usuario.setIdUsuario(idUsuario);
-                usuario.setDireccion(direccion);
-                getListaUsuarios().add(usuario);
+                usuario.telefono = telefono;
+                usuario.idUsuario = idUsuario;
+                usuario.direccion = direccion;
+                listaUsuarios.add(usuario);
 
                 return true;
             }else{
