@@ -2,7 +2,7 @@ package co.edu.uniquindio.proyectobilletera.proyectobilletera.viewcontroller;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.utils.BilleteraConstantes;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.controller.UsuarioController;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.mapping.dto.UsuarioDto;
 import javafx.beans.property.SimpleStringProperty;
@@ -48,7 +48,7 @@ public class UsuarioViewController {
         private TableView<?> tableUsuarios;
 
 
-    @FXML
+        @FXML
         private Button btnAgregar;
 
         @FXML
@@ -77,15 +77,15 @@ public class UsuarioViewController {
         if(datosValidos(usuarioDto)){
             if(usuarioController.agregarUsuario(usuarioDto)){
                 listaUsuarios.add(usuarioDto);
-                mostrarMensaje(TITULO_CLIENTE_NO_AGREGADO,HEADER,BODY_CLIENTE_NO_AGREGADO, Alert.AlertType.ERROR);
+                mostrarMensaje(BilleteraConstantes.TITULO_USUARIO_NO_AGREGADO,BilleteraConstantes.HEADER,BilleteraConstantes.BODY_USUARIO_NO_AGREGADO, Alert.AlertType.ERROR);
             }
 
         }else {
-            mostrarMensaje(TITULO_INCOMPLETO,HEADER,BODY_INCOMPLETO, Alert.AlertType.WARNING);
+            mostrarMensaje(BilleteraConstantes.TITULO_INCOMPLETO,BilleteraConstantes.HEADER,BilleteraConstantes.BODY_INCOMPLETO, Alert.AlertType.WARNING);
 
         }
     }
-    }
+    
 
     @FXML
         void onActualizar(ActionEvent event) {

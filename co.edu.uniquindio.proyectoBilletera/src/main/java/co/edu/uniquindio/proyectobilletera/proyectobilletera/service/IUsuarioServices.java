@@ -1,5 +1,7 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.service;
 
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.model.Usuario;
+
 public interface IUsuarioServices {
     boolean agregarUsuario(String nombre,
                            String apellido,
