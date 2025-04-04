@@ -86,6 +86,7 @@ public class UsuarioViewController {
         }
     }
 
+
     private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
             Alert alert = new Alert(alertType);
             alert.setTitle(titulo);
@@ -93,6 +94,18 @@ public class UsuarioViewController {
             alert.setContentText(contenido);
             alert.showAndWait();
     }
+    private boolean datosValidos(UsuarioDto usuarioDto) {
+        if(usuarioDto.nombre().isEmpty() ||
+        usuarioDto.apellido().isEmpty() ||
+        usuarioDto.idUsuario().isEmpty() ||
+        usuarioDto.correo().isEmpty()) {
+         return false;
+     }else{
+         return true;
+     }
+       
+    }
+
 
 
     @FXML
