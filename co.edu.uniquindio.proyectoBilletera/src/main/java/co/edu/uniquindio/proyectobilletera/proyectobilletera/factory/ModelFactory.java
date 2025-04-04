@@ -27,7 +27,7 @@ public class ModelFactory implements IModelFactoryServices {
 
     @Override
     public List<UsuarioDto> obtenerUsuarios() {
-        return mapper.getUsuariosDto(billetera.getListaClientes());
+        return mapper.getUsuariosDto(billetera.getListaUsuarios());
     }
 
     @Override

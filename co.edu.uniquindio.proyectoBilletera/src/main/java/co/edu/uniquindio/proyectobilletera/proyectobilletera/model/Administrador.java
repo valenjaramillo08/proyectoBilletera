@@ -62,7 +62,7 @@ public class Administrador extends Persona implements IUsuarioServices {
 
             Usuario usuario = obtenerUsuario(idUsuario);
             if(usuario != null){
-                getListaUsuario().remove(usuario);
+                getListaUsuarios().remove(usuario);
                 return true;
             }else{
                 return false;
@@ -87,5 +87,39 @@ public class Administrador extends Persona implements IUsuarioServices {
                 return false;
             }
         }
+
+        public String getIdAdministrador() {
+            return idAdministrador;
+        }
+
+        public void setIdAdministrador(String idAdministrador) {
+            this.idAdministrador = idAdministrador;
+        }
+
+        public List<Usuario> getListaUsuarios() {
+            return listaUsuarios;
+        }
+
+        public void setListaUsuarios(List<Usuario> listaUsuarios) {
+            this.listaUsuarios = listaUsuarios;
+        }
+
+        public List<Transaccion> getListaTransacciones() {
+            return listaTransacciones;
+        }
+
+        public void setListaTransacciones(List<Transaccion> listaTransacciones) {
+            this.listaTransacciones = listaTransacciones;
+        }
+
+        public List<Cuenta> getListaCuentas() {
+            return listaCuentas;
+        }
+
+        public void setListaCuentas(List<Cuenta> listaCuentas) {
+            this.listaCuentas = listaCuentas;
+        }
+
+        
 }
 
