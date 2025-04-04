@@ -85,7 +85,15 @@ public class UsuarioViewController {
 
         }
     }
-    
+
+    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
+            Alert alert = new Alert(alertType);
+            alert.setTitle(titulo);
+            alert.setHeaderText(header);
+            alert.setContentText(contenido);
+            alert.showAndWait();
+    }
+
 
     @FXML
         void onActualizar(ActionEvent event) {
