@@ -85,9 +85,15 @@ public class UsuarioViewController {
 
         }
     }
-    
-                 
 
+
+    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
+            Alert alert = new Alert(alertType);
+            alert.setTitle(titulo);
+            alert.setHeaderText(header);
+            alert.setContentText(contenido);
+            alert.showAndWait();
+    }
     private boolean datosValidos(UsuarioDto usuarioDto) {
         if(usuarioDto.nombre().isEmpty() ||
         usuarioDto.apellido().isEmpty() ||
@@ -99,6 +105,8 @@ public class UsuarioViewController {
      }
        
     }
+
+
 
     @FXML
         void onActualizar(ActionEvent event) {
