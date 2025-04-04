@@ -86,6 +86,19 @@ public class UsuarioViewController {
         }
     }
     
+                 
+
+    private boolean datosValidos(UsuarioDto usuarioDto) {
+        if(usuarioDto.nombre().isEmpty() ||
+        usuarioDto.apellido().isEmpty() ||
+        usuarioDto.idUsuario().isEmpty() ||
+        usuarioDto.correo().isEmpty()) {
+         return false;
+     }else{
+         return true;
+     }
+       
+    }
 
     @FXML
         void onActualizar(ActionEvent event) {
