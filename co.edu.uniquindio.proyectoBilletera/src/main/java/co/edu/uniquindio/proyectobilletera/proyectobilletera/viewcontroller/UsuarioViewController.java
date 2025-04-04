@@ -1,5 +1,4 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.viewcontroller;
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.utils.BilleteraConstantes;
@@ -45,7 +44,7 @@ public class UsuarioViewController {
 
         @FXML
 
-        private TableView<?> tableUsuarios;
+        private TableView<UsuarioDto> tableUsuarios;
 
 
         @FXML
@@ -61,15 +60,10 @@ public class UsuarioViewController {
         private Button btnActualizar;
 
         @FXML
-        void onNuevo(ActionEvent event) {
-
-        }
-
-        @FXML
-        void onAgregar(ActionEvent event) {
+        public void onAgregar(javafx.event.ActionEvent actionEvent) {
             agregarUsuario();
-
         }
+
 
     private void agregarUsuario() {
         UsuarioDto usuarioDto = crearUsuario();
@@ -109,9 +103,8 @@ public class UsuarioViewController {
 
 
     @FXML
-        void onActualizar(ActionEvent event) {
-
-        }
+    public void onActualizar(javafx.event.ActionEvent actionEvent) {
+    }
 
         @FXML
         void initialize() {
@@ -130,9 +123,9 @@ public class UsuarioViewController {
 
     private void initDataBinding() {
         columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
-        columApellido.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correo()));
-        columCorreo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().apellido()));
-        columIdentificacion.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().idUsuario()));
+        columApellido.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().apellido()));
+        columIdentificacion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().idUsuario()));
+        columCorreo.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().correo()));
 
     }
 
@@ -152,8 +145,8 @@ public class UsuarioViewController {
         return  new UsuarioDto(
                 txtNombre.getText(),
                 txtApellido.getText(),
-                txtCorreo.getText(),
-                txtIdentificacion.getText()
+                txtIdentificacion.getText(),
+                txtCorreo.getText()
         );
     }
 
@@ -165,6 +158,13 @@ public class UsuarioViewController {
             txtCorreo.setText(usuarioSeleccionado.correo());
         }
     }
+
+    public void onNuevo(javafx.event.ActionEvent actionEvent) {
+    }
+
+
+
+
 }
 
 

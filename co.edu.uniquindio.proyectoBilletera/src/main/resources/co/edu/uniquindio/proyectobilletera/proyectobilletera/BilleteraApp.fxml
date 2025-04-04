@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="434.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectobilletera.proyectobilletera.BilleteraApp">
+<AnchorPane prefHeight="578.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectobilletera.proyectobilletera.viewcontroller.BilleteraViewController">
    <children>
       <TabPane layoutX="23.0" layoutY="13.0" prefHeight="400.0" prefWidth="623.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>

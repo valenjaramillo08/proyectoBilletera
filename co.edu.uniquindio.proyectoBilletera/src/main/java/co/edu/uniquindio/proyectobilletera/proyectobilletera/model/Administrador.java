@@ -31,10 +31,8 @@ public class Administrador extends Persona implements IUsuarioServices {
                 usuario.setNombre(nombre);
                 usuario.setApellido(apellido);
                 usuario.setCorreo(correo);
-                usuario.telefono = telefono;
-                usuario.idUsuario = idUsuario;
-                usuario.direccion = direccion;
-                listaUsuarios.add(usuario);
+
+                getListaUsuarios().add(usuario);
 
                 return true;
             }else{
@@ -77,9 +75,7 @@ public class Administrador extends Persona implements IUsuarioServices {
                 usuario.setNombre(nombre);
                 usuario.setApellido(apellido);
                 usuario.setCorreo(correo);
-                usuario.setTelefono(telefono);
-                usuario.setIdUsuario(usuario);
-                usuario.setDireccion(direccion);
+
 
 
                 return true;

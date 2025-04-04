@@ -7,24 +7,24 @@ public class DataUtil {
     public static Billetera inicializarDatos() {
         Billetera billetera = new Billetera();
         Usuario usuario1 = Usuario.builder()
-                .telefono("31088873")
-                .idUsuario("124535")
-                .direccion("armenia")
-                .saldoDisponible(Double.parseDouble("1.000.000"))
+                .nombre("Valentina")
+                .apellido("Orozco")
+                .idUsuario("12736")
+                .correo("valentina@gmail.com")
                 .build();
 
         Usuario usuario2 = Usuario.builder()
-                .telefono("31088873")
-                .idUsuario("124535")
-                .direccion("armenia")
-                .saldoDisponible(Double.parseDouble("1.000.000"))
+                .nombre("Laura")
+                .apellido("Bareño")
+                .idUsuario("132324")
+                .correo("laura@gmail.com")
                 .build();
 
         Usuario usuario3 = Usuario.builder()
-                .telefono("31088873")
-                .idUsuario("124535")
-                .direccion("armenia")
-                .saldoDisponible(Double.parseDouble("1.000.000"))
+                .nombre("Mateo")
+                .apellido("Toquica")
+                .idUsuario("2223")
+                .correo("mateo@gmail.com")
                 .build();
 
         billetera.getListaUsuarios().add(usuario1);

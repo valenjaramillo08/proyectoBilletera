@@ -16,12 +16,8 @@ public class Usuario extends Persona {
     public List<Categoria> listaCategorias = new ArrayList<>();
     public Administrador administradorAsociado;
     
+    public Usuario(){}
 
-
-
-    public  Usuario() {
-
-    }
     public  Usuario(String nombre,
                     String apellido,
                     String correo,
@@ -67,5 +63,20 @@ public class Usuario extends Persona {
 
     public List<Presupuesto> getListaPresupuestos() {
         return listaPresupuestos;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "telefono='" + telefono + '\'' +
+                ", idUsuario='" + idUsuario + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", saldoDisponible=" + saldoDisponible +
+                ", listaCuentas=" + listaCuentas +
+                ", listaTransacciones=" + listaTransacciones +
+                ", listaPresupuestos=" + listaPresupuestos +
+                ", listaCategorias=" + listaCategorias +
+                ", administradorAsociado=" + administradorAsociado +
+                '}';
     }
 }

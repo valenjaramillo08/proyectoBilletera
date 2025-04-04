@@ -9,7 +9,10 @@ module co.edu.uniquindio.proyectobilletera.proyectobilletera {
     exports co.edu.uniquindio.proyectobilletera.proyectobilletera;
     opens co.edu.uniquindio.proyectobilletera.proyectobilletera.viewcontroller;
     exports co.edu.uniquindio.proyectobilletera.proyectobilletera.viewcontroller;
-    opens co.edu.uniquindio.proyectobilletera.billetera.controller;
-    exports co.edu.uniquindio.proyectobilletera.billetera.controller;
+    opens co.edu.uniquindio.proyectobilletera.proyectobilletera.controller;
+    exports co.edu.uniquindio.proyectobilletera.proyectobilletera.controller;
+
+
+
 
 }

@@ -3,6 +3,7 @@ package co.edu.uniquindio.proyectobilletera.proyectobilletera.factory;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.mapping.dto.UsuarioDto;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.mapping.mappers.BilleteraMapping;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.model.Billetera;
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.model.Usuario;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.service.IBilleteraMapping;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.service.IModelFactoryServices;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.utils.DataUtil;
@@ -32,6 +33,8 @@ public class ModelFactory implements IModelFactoryServices {
 
     @Override
     public boolean agregarUsuario(UsuarioDto usuarioDto) {
-        return false;
+        Usuario usuario = mapper.usuarioDtoToUsuario(usuarioDto);
+        return billetera.crearUsuario(usuario);
     }
+
 }

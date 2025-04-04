@@ -20,8 +20,8 @@ public class Billetera {
                                 double saldoDisponible){
         Usuario usuarioEncontrado = obtenerUsuario(idUsuario);
         if(usuarioEncontrado == null){
-            Usuario usuario = getBuildUsuario(nombre, apellido, correo, telefono,idUsuario, saldoDisponible);
-            listaUsuarios.add(usuario);
+            Usuario usuario = getBuildUsuario(nombre, apellido, correo, telefono,idUsuario,direccion, saldoDisponible);
+            getListaUsuarios().add(usuario);
             return true;
         }else{
             return  false;
@@ -31,7 +31,7 @@ public class Billetera {
     public boolean crearUsuario(Usuario nuevoUsuario){
         Usuario usuarioEncontrado = obtenerUsuario(nuevoUsuario.getIdUsuario());
         if(usuarioEncontrado == null){
-            listaUsuarios.add(nuevoUsuario);
+            getListaUsuarios().add(nuevoUsuario);
             return true;
         }else{
             return  false;
@@ -51,7 +51,7 @@ public class Billetera {
 
     private Usuario obtenerUsuario(String idUsuario) {
         Usuario usuario = null;
-        for (Usuario usuario1 : listaUsuarios) {
+        for (Usuario usuario1 : getListaUsuarios()) {
             if (usuario1.getIdUsuario().equalsIgnoreCase(idUsuario)) {
                 usuario = usuario1;
                 break;
