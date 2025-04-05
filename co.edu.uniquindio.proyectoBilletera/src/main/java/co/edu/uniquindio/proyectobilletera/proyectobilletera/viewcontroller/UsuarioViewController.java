@@ -4,6 +4,7 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.utils.BilleteraConstantes;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.controller.UsuarioController;
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.model.Usuario;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -104,7 +105,31 @@ public class UsuarioViewController {
 
     @FXML
     public void onActualizar(javafx.event.ActionEvent actionEvent) {
+
     }
+
+     public Usuario actualizarUsuario(String idUsuario, UsuarioDto usuarioDto) {
+        
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getIdUsuario().equals(idUsuario)) {
+                
+                usuario.setNombre(usuarioDto.getNombre());
+                usuario.setApellido(usuarioDto.getApellido());
+                usuario.setIdUsuario(usuarioDto.getIdUsuario());
+                usuario.setCorreo(usuarioDto.getCorreo());
+
+
+              
+                return usuario;
+            }else{
+                System.out.println("Usuario no encontrado");
+            }
+        
+
+        
+    }
+
+     
 
         @FXML
         void initialize() {
