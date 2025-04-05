@@ -105,33 +105,46 @@ public class UsuarioViewController {
 
     @FXML
     public void onActualizar(javafx.event.ActionEvent actionEvent) {
+            actualizarUsuario();
 
     }
 
-     public Usuario actualizarUsuario(String idUsuario, UsuarioDto usuarioDto) {
-        
-        for (Usuario usuario : listaUsuarios) {
-            if (usuario.getIdUsuario().equals(idUsuario)) {
-                
-                usuario.setNombre(usuarioDto.getNombre());
-                usuario.setApellido(usuarioDto.getApellido());
-                usuario.setIdUsuario(usuarioDto.getIdUsuario());
-                usuario.setCorreo(usuarioDto.getCorreo());
+     public void actualizarUsuario() {
 
+         if (usuarioSeleccionado != null) {
+             UsuarioDto usuarioActualizado = crearUsuario();
 
-              
-                return usuario;
-            }else{
-                System.out.println("Usuario no encontrado");
-            }
-        
+             if (datosValidos(usuarioActualizado)) {
+                 boolean actualizado = usuarioController.actualizarUsuario(usuarioSeleccionado.idUsuario(), usuarioActualizado);
 
-        
+                 if (actualizado) {
+                     int index = listaUsuarios.indexOf(usuarioSeleccionado);
+                     listaUsuarios.set(index, usuarioActualizado);
+                     tableUsuarios.refresh(); // Refresca la tabla con los nuevos datos
+                     mostrarMensaje("Éxito", "Usuario actualizado", "El usuario fue actualizado correctamente", Alert.AlertType.INFORMATION);
+                     limpiarCampos(); // 🔥 Limpia los campos después de actualizar
+                 } else {
+                     mostrarMensaje("Error", "No se pudo actualizar", "Hubo un problema actualizando el usuario", Alert.AlertType.ERROR);
+                 }
+             } else {
+                 mostrarMensaje("Datos incompletos", "Verifica los campos", "Todos los campos son obligatorios", Alert.AlertType.WARNING);
+             }
+         } else {
+             mostrarMensaje("Selección requerida", "No se seleccionó ningún usuario", "Por favor selecciona un usuario de la tabla", Alert.AlertType.WARNING);
+         }
     }
 
-     
+    private void limpiarCampos() {
+        txtNombre.clear();
+        txtApellido.clear();
+        txtIdentificacion.clear();
+        txtCorreo.clear();
+        usuarioSeleccionado = null;
+        tableUsuarios.getSelectionModel().clearSelection();
+    }
 
-        @FXML
+
+    @FXML
         void initialize() {
             usuarioController = new UsuarioController();
             initView();

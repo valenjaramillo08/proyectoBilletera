@@ -22,5 +22,7 @@ public class UsuarioController {
     public boolean agregarUsuario(UsuarioDto usuarioDto) {
         return modelFactory.agregarUsuario(usuarioDto);
     }
-    public boolean actualizarUsuario(UsuarioDto usuarioDto) {}
+    public boolean actualizarUsuario(String idUsuario, UsuarioDto usuarioDto) {
+        return modelFactory.actualizarUsuario(idUsuario ,usuarioDto);
+    }
 }

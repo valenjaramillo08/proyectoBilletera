@@ -8,4 +8,5 @@ public interface IModelFactoryServices {
     public List<UsuarioDto> obtenerUsuarios();
 
     boolean agregarUsuario(UsuarioDto usuarioDto);
+    boolean actualizarUsuario(String idUsuario,UsuarioDto usuarioDto);
 }

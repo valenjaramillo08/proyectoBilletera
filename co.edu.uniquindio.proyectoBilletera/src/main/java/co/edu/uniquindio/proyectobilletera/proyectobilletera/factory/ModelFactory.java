@@ -37,4 +37,10 @@ public class ModelFactory implements IModelFactoryServices {
         return billetera.crearUsuario(usuario);
     }
 
+    @Override
+    public boolean actualizarUsuario(String idUsuario,UsuarioDto usuarioDto) {
+        Usuario usuario = mapper.usuarioDtoToUsuario(usuarioDto);
+        return billetera.actualizarUsuario(usuario.getNombre(), usuario.getApellido(), usuario.getCorreo(), usuario.getTelefono(), idUsuario,usuario.getIdUsuario(), usuario.getDireccion());
+    }
+
 }

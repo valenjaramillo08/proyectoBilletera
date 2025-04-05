@@ -1,5 +1,7 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.model.builder.UsuarioBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,12 +40,13 @@ public class Billetera {
         }
     }
 
-    private Usuario getBuildUsuario(String nombre, String apellido, String correo, String telefono, String direccion, double saldoDisponible) {
+    private Usuario getBuildUsuario(String nombre, String apellido, String correo, String telefono, String idUsuario, String direccion, double saldoDisponible) {
         return Usuario.builder()
                 .nombre(nombre)
                 .apellido(apellido)
                 .correo(correo)
                 .telefono(telefono)
+                .idUsuario(idUsuario)
                 .direccion(direccion)
                 .saldoDisponible(saldoDisponible)
                 .build();
@@ -59,6 +62,33 @@ public class Billetera {
         }
         return usuario;
     }
+
+    public boolean actualizarUsuario(String nombre, String apellido, String correo, String telefono, String idUsuarioActual, String idUsuario, String direccion) {
+        Usuario usuarioExistente = obtenerUsuario(idUsuarioActual);
+
+        if (usuarioExistente != null) {
+
+            // Construir un nuevo objeto Usuario usando el builder y valores actualizados
+            Usuario usuarioActualizado = Usuario.builder()
+                    .nombre(nombre)
+                    .apellido(apellido)
+                    .correo(correo)
+                    .telefono(telefono)
+                    .idUsuario(idUsuario)
+                    .direccion(direccion)
+                    .saldoDisponible(usuarioExistente.getSaldoDisponible()) // mantener el saldo anterior
+                    .build();
+
+            // Reemplazar el usuario en la lista
+            listaUsuarios.remove(usuarioExistente);
+            listaUsuarios.add(usuarioActualizado);
+
+            return true;
+        }
+
+        return false;
+    }
+
 
     public List<Cuenta> getListaCuentas() {
         return listaCuentas;
@@ -107,4 +137,5 @@ public class Billetera {
     public void setListaCategorias(List<Categoria> listaCategorias) {
         this.listaCategorias = listaCategorias;
     }
+
 }
