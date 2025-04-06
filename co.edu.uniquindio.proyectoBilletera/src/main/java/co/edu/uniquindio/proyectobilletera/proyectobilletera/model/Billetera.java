@@ -1,7 +1,5 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 
-import co.edu.uniquindio.proyectobilletera.proyectobilletera.model.builder.UsuarioBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,6 +85,18 @@ public class Billetera {
         }
 
         return false;
+    }
+
+    public boolean eliminarUsuario(Usuario usuario) {
+
+        Usuario usuario1 = obtenerUsuario(usuario.getIdUsuario());
+        if(usuario1 != null){
+            getListaUsuarios().remove(usuario1);
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
 

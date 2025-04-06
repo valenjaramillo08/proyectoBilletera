@@ -197,6 +197,33 @@ public class UsuarioViewController {
         }
     }
 
+
+    @FXML
+    void onEliminar(javafx.event.ActionEvent actionEvent) {
+            eliminarUsuario();
+
+    }
+
+    private void eliminarUsuario() {
+
+        if (usuarioSeleccionado != null) {
+            boolean eliminado = usuarioController.eliminarUsuario(usuarioSeleccionado);
+
+            if (eliminado) {
+                listaUsuarios.remove(usuarioSeleccionado);
+                tableUsuarios.refresh(); // Refresca la tabla
+                mostrarMensaje("Éxito", "Usuario eliminado", "El usuario fue eliminado correctamente", Alert.AlertType.INFORMATION);
+                limpiarCampos(); // Limpia los campos
+            } else {
+                mostrarMensaje("Error", "No se pudo eliminar", "Hubo un problema eliminando el usuario", Alert.AlertType.ERROR);
+            }
+        } else {
+            mostrarMensaje("Selección requerida", "No se seleccionó ningún usuario", "Por favor selecciona un usuario de la tabla", Alert.AlertType.WARNING);
+        }
+    }
+
+
+
     public void onNuevo(javafx.event.ActionEvent actionEvent) {
     }
 

@@ -6,16 +6,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="578.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectobilletera.proyectobilletera.viewcontroller.BilleteraViewController">
    <children>
-      <TabPane layoutX="23.0" layoutY="13.0" prefHeight="400.0" prefWidth="623.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="23.0" layoutY="13.0" prefHeight="644.0" prefWidth="820.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Usuario">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="750.0">
                     <children>
-                        <SplitPane layoutX="10.0" layoutY="5.0" orientation="VERTICAL" prefHeight="611.0" prefWidth="921.0">
+                        <SplitPane layoutX="10.0" layoutY="5.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="739.0">
                             <items>
                                 <fx:include source="Usuario.fxml" />
                             </items>
