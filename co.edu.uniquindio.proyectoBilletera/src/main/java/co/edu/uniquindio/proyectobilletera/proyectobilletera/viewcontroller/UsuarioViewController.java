@@ -72,7 +72,7 @@ public class UsuarioViewController {
         if(datosValidos(usuarioDto)){
             if(usuarioController.agregarUsuario(usuarioDto)){
                 listaUsuarios.add(usuarioDto);
-                mostrarMensaje(BilleteraConstantes.TITULO_USUARIO_NO_AGREGADO,BilleteraConstantes.HEADER,BilleteraConstantes.BODY_USUARIO_NO_AGREGADO, Alert.AlertType.ERROR);
+                mostrarMensaje(BilleteraConstantes.TITULO_USUARIO_AGREGADO,BilleteraConstantes.HEADER,BilleteraConstantes.BODY_USUARIO_AGREGADO, Alert.AlertType.ERROR);
             }
 
         }else {
