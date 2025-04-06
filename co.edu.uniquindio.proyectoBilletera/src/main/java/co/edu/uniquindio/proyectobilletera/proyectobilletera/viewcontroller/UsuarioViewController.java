@@ -74,7 +74,6 @@ public class UsuarioViewController {
 
         if(datosValidos(usuarioDto)){
             if(usuarioController.agregarUsuario(usuarioDto)){
-                System.out.println("Resultado de agregarUsuario: " + usuarioController.agregarUsuario(usuarioDto));
 
                 listaUsuarios.add(usuarioDto);
                 mostrarMensaje(BilleteraConstantes.TITULO_USUARIO_AGREGADO,BilleteraConstantes.HEADER,BilleteraConstantes.BODY_USUARIO_AGREGADO, Alert.AlertType.INFORMATION);

@@ -36,8 +36,8 @@ public class BilleteraMapping implements IBilleteraMapping {
         return Usuario.builder()
                 .nombre(usuarioDto.nombre())
                 .apellido(usuarioDto.apellido())
-                .correo(usuarioDto.idUsuario())
-                .idUsuario(usuarioDto.correo())
+                .correo(usuarioDto.correo())
+                .idUsuario(usuarioDto.idUsuario())
                 .build();
 
 
