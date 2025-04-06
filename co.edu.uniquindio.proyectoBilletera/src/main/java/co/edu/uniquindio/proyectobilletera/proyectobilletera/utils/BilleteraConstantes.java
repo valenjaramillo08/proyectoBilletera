@@ -20,6 +20,6 @@ public class BilleteraConstantes {
     public static final String TITULO_INCOMPLETO = "Ingrese el titulo del usuario";
     public static final String HEADER = "Notificación";
     public static final String BODY_INCOMPLETO = "Los datos del formulario son incompletos";
-    public static final String TITULO_USUARIO_NO_AGREGADO= "Usuario no agregado";
-    public static final String BODY_USUARIO_NO_AGREGADO= "El usuario no se agrego, ya existe";
+    public static final String TITULO_USUARIO_AGREGADO= " El Usuario se agrego";
+    public static final String BODY_USUARIO_AGREGADO= "El usuario se agrego correctamente";
 }
