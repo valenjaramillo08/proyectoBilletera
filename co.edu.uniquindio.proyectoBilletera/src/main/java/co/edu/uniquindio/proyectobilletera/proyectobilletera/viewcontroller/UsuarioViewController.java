@@ -66,13 +66,18 @@ public class UsuarioViewController {
         }
 
 
+
+
+
     private void agregarUsuario() {
         UsuarioDto usuarioDto = crearUsuario();
 
         if(datosValidos(usuarioDto)){
             if(usuarioController.agregarUsuario(usuarioDto)){
+                System.out.println("Resultado de agregarUsuario: " + usuarioController.agregarUsuario(usuarioDto));
+
                 listaUsuarios.add(usuarioDto);
-                mostrarMensaje(BilleteraConstantes.TITULO_USUARIO_AGREGADO,BilleteraConstantes.HEADER,BilleteraConstantes.BODY_USUARIO_AGREGADO, Alert.AlertType.ERROR);
+                mostrarMensaje(BilleteraConstantes.TITULO_USUARIO_AGREGADO,BilleteraConstantes.HEADER,BilleteraConstantes.BODY_USUARIO_AGREGADO, Alert.AlertType.INFORMATION);
             }
 
         }else {
@@ -121,7 +126,7 @@ public class UsuarioViewController {
                      int index = listaUsuarios.indexOf(usuarioSeleccionado);
                      listaUsuarios.set(index, usuarioActualizado);
                      tableUsuarios.refresh(); // Refresca la tabla con los nuevos datos
-                     mostrarMensaje("Éxito", "Usuario actualizado", "El usuario fue actualizado correctamente", Alert.AlertType.INFORMATION);
+                     mostrarMensaje("Éxito", "Usuario actualizado", "El usuario fue actualizado correctamente", Alert.AlertType.CONFIRMATION);
                      limpiarCampos(); // 🔥 Limpia los campos después de actualizar
                  } else {
                      mostrarMensaje("Error", "No se pudo actualizar", "Hubo un problema actualizando el usuario", Alert.AlertType.ERROR);

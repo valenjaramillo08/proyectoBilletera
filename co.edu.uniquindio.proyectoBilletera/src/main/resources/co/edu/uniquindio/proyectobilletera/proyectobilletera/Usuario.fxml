@@ -16,8 +16,8 @@
                   <Label layoutX="31.0" layoutY="77.0" text="Apellido:" />
                   <Label layoutX="317.0" layoutY="29.0" text="Identificación:" />
                   <Label layoutX="320.0" layoutY="77.0" text="Correo:" />
-                  <TextField fx:id="txtNombre" layoutX="84.0" layoutY="73.0" prefHeight="5.0" prefWidth="166.0" />
-                  <TextField fx:id="txtApellido" layoutX="84.0" layoutY="29.0" prefHeight="25.0" prefWidth="166.0" />
+                  <TextField fx:id="txtApellido" layoutX="84.0" layoutY="73.0" prefHeight="5.0" prefWidth="166.0" />
+                  <TextField fx:id="txtNombre" layoutX="84.0" layoutY="29.0" prefHeight="25.0" prefWidth="166.0" />
                   <TextField fx:id="txtIdentificacion" layoutX="407.0" layoutY="25.0" prefHeight="25.0" prefWidth="166.0" />
                   <TextField fx:id="txtCorreo" layoutX="407.0" layoutY="73.0" prefHeight="25.0" prefWidth="166.0" />
                   <Separator layoutY="127.0" prefHeight="0.0" prefWidth="640.0" />

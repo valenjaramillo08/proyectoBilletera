@@ -27,8 +27,8 @@ public class BilleteraMapping implements IBilleteraMapping {
         return new UsuarioDto(
                 usuario.getNombre(),
                 usuario.getApellido(),
-                usuario.getCorreo(),
-                usuario.getIdUsuario());
+                usuario.getIdUsuario(),
+                usuario.getCorreo());
     }
 
     @Override
@@ -36,8 +36,8 @@ public class BilleteraMapping implements IBilleteraMapping {
         return Usuario.builder()
                 .nombre(usuarioDto.nombre())
                 .apellido(usuarioDto.apellido())
-                .correo(usuarioDto.correo())
-                .idUsuario(usuarioDto.idUsuario())
+                .correo(usuarioDto.idUsuario())
+                .idUsuario(usuarioDto.correo())
                 .build();
 
 
