@@ -22,4 +22,17 @@ public class BilleteraConstantes {
     public static final String BODY_INCOMPLETO = "Los datos del formulario son incompletos";
     public static final String TITULO_USUARIO_AGREGADO= " El Usuario se agrego";
     public static final String BODY_USUARIO_AGREGADO= "El usuario se agrego correctamente";
+
+    public static final String CUENTA_CREADA = "La cuenta se ha creado con éxito";
+    public static final String CUENTA_NO_CREADA = "No se pudo crear la cuenta, ya existe¡¡¡¡";
+
+    public static final String CUENTA_ENCONTRADA = "Cuenta encontrada: ";
+    public static final String CUENTA_NO_EXISTE = "La cuenta no existe";
+    public static final String CUENTA_ELIMINADA = "La cuenta se ha eliminado con éxito";
+    public static final String CUENTA_ACTUALIZADA = "La cuenta se ha actualizado con éxito";
+
+    public static final String CUENTA_NO_ACTUALIZADO = "No se pudo actualizar la cuenta,no existe¡¡¡¡";
+
+    public static final String TITULO_CUENTA_AGREGADO= " La cuenta se agrego";
+    public static final String BODY_CUENTA_AGREGADO= "La cuenta se agrego correctamente";
 }

@@ -19,4 +19,55 @@ public class Cuenta {
         this.numeroCuenta = numeroCuenta;
         this.tipoCuenta = tipoCuenta;
     }
+
+    public String getIdCuenta() {
+        return idCuenta;
+    }
+
+    public void setIdCuenta(String idCuenta) {
+        this.idCuenta = idCuenta;
+    }
+
+    public String getNombreBanco() {
+        return nombreBanco;
+    }
+
+    public void setNombreBanco(String nombreBanco) {
+        this.nombreBanco = nombreBanco;
+    }
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public TipoCuenta getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public void setTipoCuenta(TipoCuenta tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
+    }
+
+    public Usuario getUsuarioAsociado() {
+        return usuarioAsociado;
+    }
+
+    public void setUsuarioAsociado(Usuario usuarioAsociado) {
+        this.usuarioAsociado = usuarioAsociado;
+    }
+
+    public Administrador getAdministradorAsociado() {
+        return administradorAsociado;
+    }
+
+    public void setAdministradorAsociado(Administrador administradorAsociado) {
+        this.administradorAsociado = administradorAsociado;
+    }
+
+
+    
 }

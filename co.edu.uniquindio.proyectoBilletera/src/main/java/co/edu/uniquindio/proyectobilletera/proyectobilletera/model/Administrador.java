@@ -1,17 +1,21 @@
 package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 
 import co.edu.uniquindio.proyectobilletera.proyectobilletera.service.IUsuarioServices;
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.service.ICuentaServices;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Administrador extends Persona implements IUsuarioServices {
+public class Administrador extends Persona implements IUsuarioServices, ICuentaServices {
         public String idAdministrador;
         List<Usuario> listaUsuarios = new ArrayList<>();
         List<Transaccion> listaTransacciones = new ArrayList<>();
         List<Cuenta> listaCuentas = new ArrayList<>();
 
-        public Administrador() {
+        Billetera billetera;
+
+        public Administrador(Billetera billetera) {
+            this.billetera = billetera;
         }
 
         public Administrador (String nombre,
@@ -20,6 +24,7 @@ public class Administrador extends Persona implements IUsuarioServices {
                               String idAdministrador){
             super(nombre,apellido,correo);
             this.idAdministrador = idAdministrador;
+
 
         }
 
@@ -76,8 +81,6 @@ public class Administrador extends Persona implements IUsuarioServices {
                 usuario.setApellido(apellido);
                 usuario.setCorreo(correo);
 
-
-
                 return true;
             }else{
                 return false;
@@ -116,6 +119,20 @@ public class Administrador extends Persona implements IUsuarioServices {
             this.listaCuentas = listaCuentas;
         }
 
-        
+        @Override
+        public boolean agregarCuenta(String idCuenta,String nombreBanco, String numeroCuenta,TipoCuenta tipoCuenta) {
+            return billetera.agregarCuenta(idCuenta,nombreBanco,numeroCuenta,tipoCuenta);
+        }
+
+        @Override
+        public boolean actualizarCuenta(String idCuenta, String idCuentaActual, String nombreBanco, String numeroCuenta,
+                TipoCuenta tipoCuenta) {
+                    return billetera.actualizarCuenta(idCuenta, idCuentaActual, nombreBanco, numeroCuenta, tipoCuenta);
+        }
+
+        @Override
+        public boolean eliminarCuenta(String idCuenta, String nombreBanco, String numeroCuenta, TipoCuenta tipoCuenta) {
+            return billetera.eliminarCuenta(idCuenta, nombreBanco, numeroCuenta, tipoCuenta);
+        }    
 }
 

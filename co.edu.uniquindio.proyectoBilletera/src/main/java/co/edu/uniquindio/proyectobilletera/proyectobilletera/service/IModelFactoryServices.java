@@ -10,4 +10,6 @@ public interface IModelFactoryServices {
     boolean agregarUsuario(UsuarioDto usuarioDto);
     boolean actualizarUsuario(String idUsuario,UsuarioDto usuarioDto);
     boolean eliminarUsuario(UsuarioDto usuarioDto);
+
+    
 }

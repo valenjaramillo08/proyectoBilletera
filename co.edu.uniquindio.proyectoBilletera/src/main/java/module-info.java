@@ -4,6 +4,7 @@ module co.edu.uniquindio.proyectobilletera.proyectobilletera {
 
     requires org.controlsfx.controls;
     requires java.desktop;
+    requires javafx.base;
 
     opens co.edu.uniquindio.proyectobilletera.proyectobilletera to javafx.fxml;
     exports co.edu.uniquindio.proyectobilletera.proyectobilletera;
@@ -11,6 +12,7 @@ module co.edu.uniquindio.proyectobilletera.proyectobilletera {
     exports co.edu.uniquindio.proyectobilletera.proyectobilletera.viewcontroller;
     opens co.edu.uniquindio.proyectobilletera.proyectobilletera.controller;
     exports co.edu.uniquindio.proyectobilletera.proyectobilletera.controller;
+   
 
 
 
