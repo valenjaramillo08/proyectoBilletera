@@ -3,7 +3,9 @@ package co.edu.uniquindio.proyectobilletera.proyectobilletera.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Billetera {
+import co.edu.uniquindio.proyectobilletera.proyectobilletera.service.ICuentaServices;
+
+public class Billetera implements ICuentaServices {
     List<Cuenta> listaCuentas = new ArrayList<>();
     List<Presupuesto> listaPresupuestos = new ArrayList<>();
     List<Transaccion> listaTransaccioness = new ArrayList<>();
@@ -68,7 +70,7 @@ public class Billetera {
 
         if (usuarioExistente != null) {
 
-            // Construir un nuevo objeto Usuario usando el builder y valores actualizados
+            
             Usuario usuarioActualizado = Usuario.builder()
                     .nombre(nombre)
                     .apellido(apellido)
@@ -76,10 +78,10 @@ public class Billetera {
                     .telefono(telefono)
                     .idUsuario(idUsuario)
                     .direccion(direccion)
-                    .saldoDisponible(usuarioExistente.getSaldoDisponible()) // mantener el saldo anterior
+                    .saldoDisponible(usuarioExistente.getSaldoDisponible())
                     .build();
 
-            // Reemplazar el usuario en la lista
+            
             listaUsuarios.remove(usuarioExistente);
             listaUsuarios.add(usuarioActualizado);
 
@@ -101,6 +103,60 @@ public class Billetera {
 
     }
 
+    @Override
+    public boolean agregarCuenta(String idCuenta,String nombreBanco, String numeroCuenta,TipoCuenta tipoCuenta) {
+        Cuenta cuenta = obtenerCuenta(idCuenta);
+        if(cuenta == null){
+            cuenta = new Cuenta();
+            cuenta.setIdCuenta(idCuenta);
+            cuenta.setNombreBanco(nombreBanco);
+            cuenta.setNumeroCuenta(numeroCuenta);
+            cuenta.setTipoCuenta(tipoCuenta);
+            getListaCuentas().add(cuenta);
+
+            return true;
+        }else{
+            return false;
+        }
+       
+    }
+
+    @Override
+    public boolean actualizarCuenta(String idCuenta, String idCuentaActual, String nombreBanco, String numeroCuenta,
+            TipoCuenta tipoCuenta) {
+                Cuenta cuenta = obtenerCuenta(idCuentaActual);
+                if(cuenta != null){
+                    cuenta.setNombreBanco(nombreBanco);
+                    cuenta.setNumeroCuenta(numeroCuenta);
+                    return true;
+                }else{
+                    return false;
+                }
+          
+    }
+
+    @Override
+    public boolean eliminarCuenta(String idCuenta, String nombreBanco, String numeroCuenta, TipoCuenta tipoCuenta) {
+        Cuenta cuenta = obtenerCuenta(idCuenta);
+        if(cuenta != null){
+            getListaCuentas().remove(cuenta);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    private Cuenta obtenerCuenta(String idCuenta) {
+        Cuenta cuentaEncontrada = null;
+        for (Cuenta cuenta: getListaCuentas()) {
+            if(cuenta.getIdCuenta().equalsIgnoreCase(idCuenta)){
+                cuentaEncontrada = cuenta;
+                break;
+            }
+        }
+
+        return cuentaEncontrada;
+    }
 
     public List<Cuenta> getListaCuentas() {
         return listaCuentas;
